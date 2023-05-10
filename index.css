@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(228, 225, 225);
+}
+
+
+header {
+    height: 50vh;
+    background-image: url(./img/accueil/movie_stills_come_to_life_in_these_captivating_cinemagraphs_27.gif);
+    background-size: cover;
+}
+.navbar {
+    border-radius: 0 0 5px 5px;
+    opacity: 60%;
+}
+.logo {
+    width: 8%;
+}
+.nav-link:hover , .dropdown-item:hover{
+    color: red !important;
+}
+
+h1 ,h2 ,h3 {
+    color: rgba(0,175,244);
+}
+
+.card {
+    width: 45%;
+}
+.card:hover {
+    background-color: rgba(0,175,244) !important;
+    color: white !important;
+}
+.card:hover > h3 {
+    color: white;
+}
+
+
+.pict {
+    background-image: url(./img/accueil/auto.jpg);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px black solid;
+    width: 100%;
+    height: 60vh;
+}
+.permis {
+    width: 50%;
+    height: 100%;
+}
+
+.partenaire {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    color: white;
+}
+.reso {
+    width: 10%;
+}
