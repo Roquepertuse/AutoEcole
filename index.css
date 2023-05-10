@@ -32,7 +32,7 @@ h1 ,h2 ,h3 {
     background-color: rgba(0,175,244) !important;
     color: white !important;
 }
-.card:hover > h3 {
+.card:hover > h3 , .card:hover > h2{
     color: white;
 }
 
@@ -61,4 +61,13 @@ footer {
 }
 .reso {
     width: 10%;
+}
+
+@media screen and (max-width: 800px) {
+    section {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+    }
 }
