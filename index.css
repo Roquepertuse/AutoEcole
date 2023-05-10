@@ -70,4 +70,24 @@ footer {
     .card {
         width: 100%;
     }
+
+    .comment > article > .w-50 {
+        width: 80% !important;
+        margin-bottom: 5%;
+    }
+    .comment > article {
+        flex-direction: column;
+    }
+    .comment > article > .pe-5 , .ps-5 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0% !important;
+    }
+
+    footer > section > .w-25 {
+        margin: auto;
+        width: 75% !important;
+    }
+
 }
