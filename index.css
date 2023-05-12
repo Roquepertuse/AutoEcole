@@ -25,6 +25,10 @@ h1 ,h2 ,h3 {
     color: rgba(0,175,244);
 }
 
+.zone {
+    list-style: none;
+}
+
 .card {
     width: 45%;
 }
@@ -63,10 +67,16 @@ footer {
     width: 10%;
 }
 
+
 @media screen and (max-width: 800px) {
     section {
         flex-direction: column;
     }
+    
+    .pourcent{
+        flex-direction: column;
+    }
+    
     .card {
         width: 100%;
     }
