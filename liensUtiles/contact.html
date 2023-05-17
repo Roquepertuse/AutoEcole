@@ -61,7 +61,7 @@
     </header>
     <main class="container">
         <section class="d-flex">
-            <article class="m-5">
+            <article class="m-5 mb-0">
                 <h2>NOTRE ADRESSE</h2>
                 <P>Pôle d’activité – Sortie N°3
                     565 Rue Marcellin Berthelot
@@ -77,7 +77,7 @@
             </article>
         </section>
         <section>
-            <div id="map" style="height: 400px;"></div>
+            <div id="map" style="height: 550px;"></div>
         </section>
     </main>
 
@@ -110,22 +110,24 @@
         <p class="text-center p-4">Les Milles Conduites 2020 Conception et Réalisation</p>
     </footer>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    
     <script>
-        var map = L.map('map').setView([43.491150, 5.372630],
-            15); // Coordonnées du centre de la carte et niveau de zoom initial
+        var map = L.map('map').setView([43.491462, 5.371947],
+            17); // Coordonnées du centre de la carte et niveau de zoom initial
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data &copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        var marker = L.marker([43.491150, 5.372630], {
+        var marker = L.marker([43.491462, 5.371947], {
             title: 'Les Milles Conduite',
             draggable: true
         }).addTo(map);
 
         // Ouvrir dans Google Maps
-        var lat = 43.491150;
-        var lng = 5.372630;
+        var lat = 43.491462;
+        var lng = 5.371947;
         var googleMapsLink = "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lng;
 
         var gpsLink = L.DomUtil.create('a');
