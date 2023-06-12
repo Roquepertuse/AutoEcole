@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../index.css">
-    <title>CODE</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -59,74 +60,24 @@
         </nav>
     </header>
     <main class="container">
-        <h2 class="text-center m-4">CODE DE LA ROUTE</h2>
-        <section class="d-flex justify-content-evenly">
-            <div class="code">
-                <h3>Code à l'Auto École</h3>
-                <div class="imgCode c1"></div>
-                <ul>
-                    <li>Mercredi et Jeudi : 17H-19H</li>
-                    <li>Avec un Enseignant Diplôimé</li>
-                </ul>
-            </div>
-            <div class="code">
-                <h3>Code à la Maison</h3>
-                <div class="imgCode c2"></div>
-                <ul>
-                    <li>Connexion à Ici-Code pour S'Entrainer Partout</li>
-                </ul>
-            </div>
-        </section>
-        <article class="m-auto acc">
-            <h3>Salle à Disposition</h3>
-            <ul class="m-auto">
-                <li>Mercredi au Jeudi : 15H-19H</li>
-                <li>Samedi : 9H-12H</li>
-            </ul>
-        </article>
-
-        <h2 class="text-center m-4">FORMULES</h2>
-        <section class="text-center d-flex flex-wrap justify-content-evenly mt-5 mb-5">
-            <article class="card p-4 m-2">
-                <h3 class="mb-3">Code</h3>
-                <p class="h-75">
-                    <b> Accès à la salle de Code</b><br>
-                    <b> Code d'Accès en Ligne</b><br>
-                    <b>Livret Code de la Route</b><br>
-                </p>
-                <a class="btn btn-primary m-2" href="./prestation/accompagnee.html">Tarif : 225€</a>
+        <section class="d-flex">
+            <article class="m-5 mb-0">
+                <h2>NOTRE ADRESSE</h2>
+                <P>Pôle d’activité – Sortie N°3
+                    565 Rue Marcellin Berthelot
+                    Bat le Mercure A
+                    13290 Aix-en-Provence</P>
+                <p>TEL : 07 54 38 56 47</p>
+                <p>MAIL : millesconduite@outlook.fr</p>
             </article>
-            <article class="card p-4 m-2">
-                <h3 class="text-center mb-3">Code Acceléré (5 Jours)</h3>
-                <p class="h-75">
-                    <b> Etre disponoble du Lundi au Vendredi (9H-17H)</b><br>
-                    <b> Livret Code de la Route</b><br>
-                    <b>Code d'Accès en Ligne</b><br>
-                    <b>SèInscrire Au Moins une Semaine avant la Formation</b><br>
-                    <b> Examen le Samedi</b><br>
-                </p>
-                <a class="btn btn-primary m-2" href="./prestation/supervisee.html">Tarif : 300€</a>
+            <article class="m-5">
+                <h2>CONRACTEZ-NOUS</h2>
+                <p>Vous avez besoin d’un renseignement ou une réclamation, n’hésitez pas à nous contacter.</p>
+                <p>Nous nous engageons à vous apporter une réponse précise dans les meilleurs délais.</p>
             </article>
         </section>
-        <section class="card w-100">
-            <h2 class="text-center m-4">PIÈCES À FOURNIR</h2>
-            <ul class="m-4">
-                <li>Photocopie recto-verso de la CNI en cours de Validation</li>
-                <li>Photocopie recto-verso de la CNI du responsable légal pour les moins de 18 ans</li>
-                <li>4 Photos d'identité avec signature numérique (ou format ANTS)</li>
-                <li>Photocopie attestation de recensement (pour les candidats âgés de 17 ans à 25ans non révolus)</li>
-                <li>Photocopie certificat participation à l'appel de préparation à la défense ou de la convocation (pour
-                    les candidats âgés de 17 ans à 25 ans non révolus)</li>
-                <li>Photocopie ASSR2 (pour les candidats âgés de moins de 21 ans) singée par l'élève</li>
-                <li>1 justificatif de domicile de moins de 3 mois et/ou attestation d'hébergement</li>
-                <li>1 adresse mail et 1 numéro de téléphone</li>
-                <li>1 enveloppe timbrée (20 g)</li>
-            </ul>
-            <h5 class="ms-5">Si déjà un dossier ou un permis</h5>
-            <ul class="ms-4">
-                <li>Attestation d'inscription au permis de conduite (ANTS)</li>
-                <li>Permis étranger, fournir une copie</li>
-            </ul>
+        <section>
+            <div id="map" style="height: 550px;"></div>
         </section>
     </main>
 
@@ -158,6 +109,36 @@
         </div>
         <p class="text-center p-4">Les Milles Conduites 2020 Conception et Réalisation</p>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    
+    <script>
+        var map = L.map('map').setView([43.491462, 5.371947],
+            17); // Coordonnées du centre de la carte et niveau de zoom initial
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        var marker = L.marker([43.491462, 5.371947], {
+            title: 'Les Milles Conduite',
+            draggable: true
+        }).addTo(map);
+
+        // Ouvrir dans Google Maps
+        var lat = 43.491462;
+        var lng = 5.371947;
+        var googleMapsLink = "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lng;
+
+        var gpsLink = L.DomUtil.create('a');
+        gpsLink.href = googleMapsLink;
+        gpsLink.target = "_blank";
+        gpsLink.textContent = "Ouvrir dans Google Maps";
+
+        marker.bindPopup("<b>Les Milles Conduite</b><br>Auto École<br>" + gpsLink.outerHTML).openPopup();
+        // Ajoutez des marqueurs, des polylignes, etc. à la carte si nécessaire
+        // Voir la documentation de Leaflet pour plus d'exemples
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
